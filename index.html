@@ -408,7 +408,7 @@
   <!-- ================= CUSTOMIZE ================= -->
   <section id="customize">
     <h2>Customize Your Outfit</h2>
-    <p class="section-intro">Every piece is made to order. Here are some of the details you can personalize.</p>
+    <p class="section-intro">First select your desired outfit from the collections and continue to customization.Every piece is made to order. Here are some of the details you can personalize. </p>
 
     <!-- Step label + progress bar -->
     <div class="wizard-bar">
@@ -421,27 +421,26 @@
     <!-- The four steps. Only one shows at a time. -->
     <div class="option-grid">
 
-      <!-- Step 1: Neckline -->
-      <div class="option-group">
-        <h3><i class="fa-solid fa-shirt"></i> Neckline</h3>
+      <!-- Step 1: Fabric -->
+        <div class="option-group">
+        <h3><i class="fa-solid fa-swatchbook"></i> Fabric</h3>
         <div class="pills">
-          <span class="pill">Round</span>
-          <span class="pill">V-Neck</span>
-          <span class="pill">Boat</span>
-          <span class="pill">Square</span>
-          <span class="pill">Collared</span>
-          <span class="pill">Halter</span>
-          <span class="pill">Sweetheart</span>
+          <span class="pill">Cotton</span>
+          <span class="pill">Silk</span>
+          <span class="pill">Georgette</span>
+          <span class="pill">Linen</span>
+          <span class="pill">Chiffon</span>
+          <span class="pill">Velvet</span>
           <span class="pill pill-other"><i class="fa-solid fa-plus"></i> Other</span>
         </div>
-        <!-- Hidden until "Other" is picked -->
         <div class="upload-box" hidden>
           <p>Show us what you have in mind. Upload reference images.</p>
-          <label for="ref-neckline" class="upload-label"><i class="fa-solid fa-camera"></i> Choose images</label>
-          <input type="file" id="ref-neckline" class="ref-input" accept="image/*" multiple>
+          <label for="ref-fabric" class="upload-label"><i class="fa-solid fa-camera"></i> Choose images</label>
+          <input type="file" id="ref-fabric" class="ref-input" accept="image/*" multiple>
           <div class="preview-area"></div>
         </div>
       </div>
+     
 
       <!-- Step 2: Sleeve Type -->
       <div class="option-group">
@@ -463,22 +462,24 @@
         </div>
       </div>
 
-      <!-- Step 3: Fabric -->
-      <div class="option-group">
-        <h3><i class="fa-solid fa-swatchbook"></i> Fabric</h3>
+      <!-- Step 3: Neckline -->
+     <div class="option-group">
+        <h3><i class="fa-solid fa-shirt"></i> Neckline</h3>
         <div class="pills">
-          <span class="pill">Cotton</span>
-          <span class="pill">Silk</span>
-          <span class="pill">Georgette</span>
-          <span class="pill">Linen</span>
-          <span class="pill">Chiffon</span>
-          <span class="pill">Velvet</span>
+          <span class="pill">Round</span>
+          <span class="pill">V-Neck</span>
+          <span class="pill">Boat</span>
+          <span class="pill">Square</span>
+          <span class="pill">Collared</span>
+          <span class="pill">Halter</span>
+          <span class="pill">Sweetheart</span>
           <span class="pill pill-other"><i class="fa-solid fa-plus"></i> Other</span>
         </div>
+        <!-- Hidden until "Other" is picked -->
         <div class="upload-box" hidden>
           <p>Show us what you have in mind. Upload reference images.</p>
-          <label for="ref-fabric" class="upload-label"><i class="fa-solid fa-camera"></i> Choose images</label>
-          <input type="file" id="ref-fabric" class="ref-input" accept="image/*" multiple>
+          <label for="ref-neckline" class="upload-label"><i class="fa-solid fa-camera"></i> Choose images</label>
+          <input type="file" id="ref-neckline" class="ref-input" accept="image/*" multiple>
           <div class="preview-area"></div>
         </div>
       </div>
