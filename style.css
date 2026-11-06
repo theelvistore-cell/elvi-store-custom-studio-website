@@ -1,0 +1,1142 @@
+/* =====================================================
+   CUSTOM FASHION STUDIO - style.css  (clean rewrite)
+   Mood: dark charcoal, soft pink glow, elegant serif,
+   rounded chips and cards.
+
+   HOW TO ADD A NEW CARD LATER:
+   Copy one <div class="card"> ... </div> block inside the
+   right <div class="card-grid"> and change the text.
+   The grid does the rest: every card is the same size,
+   and extra cards drop onto the next line by themselves.
+   ===================================================== */
+
+/* ---------- 1. Settings you can change in ONE place ---------- */
+:root {
+  /* colors */
+  --charcoal: #191d1f;
+  --panel: #23282b;
+  --line: rgba(255, 255, 255, 0.1);
+  --cream: #faf6f1;
+  --muted: rgba(250, 246, 241, 0.7);
+  --rose: #c9667a;
+  --rose-soft: #e58a9d;
+  --berry: #c2335f;
+  --berry-hover: #d63f6e;
+
+  /* layout */
+  --page-width: 1200px;     /* widest the content can get on big screens */
+  --card-min: 210px;        /* smallest a card is allowed to be (more = fewer cards per row) */
+  --card-gap: 14px;         /* space between cards */
+  --video-shape: 4 / 5;     /* video shape in cards: width / height (try 1 / 1 or 3 / 4) */
+  --flow-width: 800px;      /* width of the Customize steps column */
+}
+
+/* ---------- 2. Basic reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* ---------- 3. Smooth scrolling ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 56px;   /* stops the sticky menu covering headings */
+}
+
+/* ---------- 4. Whole page ---------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--charcoal);
+  color: var(--cream);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Layout for the Navigation Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #ffffff;
+}
+
+/* Controls the size of the logo image */
+.site-logo {
+    height: 50px;       /* Change this value to make your logo bigger or smaller */
+    width: auto;         /* Keeps the correct aspect ratio so it doesn't stretch */
+    display: block;
+}
+
+/* ---------- 5. Menu bar ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 20px;
+  background-color: rgba(25, 29, 31, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--rose-soft);
+}
+
+/* ---------- 6. Hero banner ---------- */
+header {
+  font-size: larger;
+  min-height: 100vh;
+  min-height: 100svh;          /* better on phones with a moving address bar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201, 102, 122, 0.5), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(201, 102, 122, 0.4), transparent 45%),
+    var(--charcoal);
+}
+
+.eyebrow {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 6vw, 3rem);
+  color: var(--rose-soft);
+  margin-bottom: 6px;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 10px;
+  color: var(--cream);
+}
+
+header p em {
+  font-style: italic;
+  color: var(--rose-soft);
+}
+
+header p {
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+/* ---------- 7. Buttons ---------- */
+.btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 11px 28px;
+  background-color: var(--berry);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--berry-hover);
+}
+
+/* smaller button used inside cards */
+.btn-small {
+  margin-top: 14px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ---------- 8. Sections (shared by all) ---------- */
+section {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 44px 16px;
+}
+
+section h2 {
+  text-align: center;
+  font-size: clamp(1.7rem, 5vw, 2.2rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 550px;
+  margin: -8px auto 18px;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+/* ---------- 9. Collections: category headings ---------- */
+.category {
+  margin-bottom: 28px;
+}
+
+.category:last-child {
+  margin-bottom: 0;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--cream);
+}
+
+/* thin pink line after each category name */
+.category-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--rose), transparent);
+}
+
+/* ---------- 10. Collections: the card grid ----------
+   auto-fill  = make as many equal columns as fit, then wrap
+   minmax()   = each column is at least --card-min, and shares spare space equally
+   min(100%,) = on a tiny phone, a card never gets wider than the screen
+   Rows are equal-height automatically, so all buttons line up. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--card-min)), 1fr));
+  gap: var(--card-gap);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;                /* lets long titles wrap instead of stretching the card */
+  padding: 20px;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  text-align: left;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--rose);
+}
+
+/* the video (or .card-media wrapper) at the top of a card */
+.card > video,
+.card > .card-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--video-shape);
+  margin-bottom: 14px;
+  border-radius: 14px;
+  object-fit: cover;
+  overflow: hidden;
+  background-color: #111416;
+}
+
+.card > .card-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* icon sitting above the title (cards without a video) */
+.card > .card-icon {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: var(--rose-soft);
+}
+
+/* icon sitting inside the title, on its left (cards with a video) */
+.card h3 .card-icon {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  font-size: 0.85em;
+  color: var(--rose-soft);
+}
+
+.card h3 {
+  margin-bottom: 4px;
+  padding-right: 40px;         /* keeps a title away from the corner arrow */
+  font-size: 1.08rem;
+  line-height: 1.25;
+  color: var(--cream);
+}
+
+/* a card that starts with a video has no arrow beside its title */
+.card:has(> video) h3,
+.card:has(> .card-media) h3 {
+  padding-right: 0;
+}
+
+.card p {
+  margin-bottom: 14px;
+  font-weight: 300;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* the button always sits at the bottom, so every card in a row lines up */
+.card .btn-small {
+  margin-top: auto;
+  align-self: stretch;
+}
+
+/* the round arrow in the corner (CSS only) */
+.card::after {
+  content: "\2197";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-size: 0.95rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card:hover::after {
+  background-color: var(--berry);
+  color: white;
+}
+
+/* ---------- 11. Customize: the boxes and chips ---------- */
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.option-group {
+  padding: 18px 20px 20px;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.option-group h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--cream);
+}
+
+.option-group h3 i {
+  margin-right: 8px;
+  font-size: 0.9em;
+  color: var(--rose-soft);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: var(--cream);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.pill:hover {
+  border-color: var(--rose-soft);
+  color: var(--rose-soft);
+}
+
+/* keep AFTER .pill:hover so it wins */
+.pill.selected {
+  background-color: var(--berry);
+  border-color: var(--berry);
+  color: white;
+}
+
+.pill i,
+.upload-label i {
+  margin-right: 6px;
+  font-size: 0.8em;
+}
+
+/* "Other" looks the same in every group */
+.pill-other {
+  border-style: dashed;
+}
+
+/* ---------- 12. Customize: step-by-step flow ---------- */
+.wizard-bar {
+  max-width: var(--flow-width);
+  margin: 0 auto 12px;
+}
+
+.wizard-bar p {
+  margin-bottom: 4px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-align: center;
+  color: var(--rose-soft);
+}
+
+.progress {
+  height: 6px;
+  background-color: var(--line);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 25%;
+  background-color: var(--berry);
+  border-radius: 50px;
+  transition: width 0.4s;
+}
+
+/* JavaScript adds "wizard-on", then only the active box shows */
+.option-grid.wizard-on {
+  display: block;
+  max-width: var(--flow-width);
+  margin: 0 auto;
+}
+
+.option-grid.wizard-on .option-group {
+  display: none;
+}
+
+.option-grid.wizard-on .option-group.active {
+  display: block;
+}
+
+.wizard-on .pill {
+  padding: 7px 16px;
+  font-size: 0.9rem;
+}
+
+.wizard-buttons {
+  max-width: var(--flow-width);
+  margin: 12px auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-next,
+.btn-ghost {
+  padding: 9px 26px;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-next {
+  background-color: var(--berry);
+  color: white;
+}
+
+.btn-next:hover {
+  background-color: var(--berry-hover);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--cream);
+}
+
+.btn-ghost:hover {
+  border-color: var(--rose-soft);
+}
+
+/* ---------- 13. Summary box ---------- */
+.summary-box {
+  max-width: var(--flow-width);
+  margin: 14px auto 0;
+  padding: 14px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(194, 51, 95, 0.3), var(--panel));
+  border: 1px solid rgba(201, 102, 122, 0.4);
+  border-radius: 18px;
+}
+
+.summary-box h3 {
+  margin-bottom: 2px;
+  font-size: 1rem;
+  color: var(--rose-soft);
+}
+
+.summary-box p {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* ---------- 14. Image upload (slim strip) ---------- */
+.upload-box {
+  max-width: var(--flow-width);
+  margin: 14px auto 0;
+  padding: 12px 16px;
+  display: flex;
+  flex-wrap: wrap;             /* on a small phone the button drops under the text */
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 14px;
+  text-align: left;
+  border: 1.5px dashed var(--rose);
+  border-radius: 16px;
+}
+
+.upload-box h3 {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.upload-box p {
+  flex: 1 1 200px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.upload-label {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: var(--berry);
+  color: white;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-label:hover {
+  background-color: var(--berry-hover);
+}
+
+/* hide the plain file inputs; the pink button replaces them */
+#ref-images,
+#own-images,
+.ref-input {
+  display: none;
+}
+
+.preview-area {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preview-area:empty {
+  display: none;
+}
+
+.preview-area img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* an upload strip inside a step box fills that box */
+.option-group .upload-box {
+  max-width: none;
+  margin: 14px 0 0;
+}
+
+/* ---------- 15. Order section ---------- */
+.form-wrapper {
+  max-width: var(--flow-width);
+  margin: 0 auto;
+  padding: 14px;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+/* temporary placeholder (delete when the form goes in) */
+.form-placeholder {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--rose-soft);
+  border: 2px dashed var(--rose);
+  border-radius: 14px;
+}
+
+.form-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 1100px;
+  border: none;
+  border-radius: 12px;
+  background-color: white;
+}
+
+/* ---------- 16. Footer ---------- */
+footer {
+   margin: 0;
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: -50vw;
+  padding: 16px;
+  text-align: center;
+  background-color: #111416;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+
+/* ---------- 17. Keyboard focus + reduced motion ---------- */
+a:focus-visible,
+.pill:focus-visible,
+.upload-label:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--rose-soft);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+/* ---------- 18. Phones ---------- */
+@media (max-width: 600px) {
+  section {
+    padding: 32px 12px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  header {
+    padding: 56px 16px 48px;
+  }
+
+  .card-grid {
+    gap: 12px;
+  }
+
+  .option-group {
+    padding: 16px;
+  }
+}
+/* =====================================================
+   FIXED COLUMNS: cards never get bigger or smaller
+   because of how many cards are in a row.
+   Keep this at the VERY BOTTOM of the file so it wins.
+   ===================================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));   /* phones: 2 per row */
+  gap: 12px;
+  align-items: stretch;
+}
+
+.card {
+  flex: none;
+  width: auto;
+  max-width: none;
+  min-width: 0;
+}
+
+/* tablets: 3 per row */
+@media (min-width: 650px) {
+  .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+/* small laptops: 4 per row */
+@media (min-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* big screens: 5 per row */
+@media (min-width: 1100px) {
+  .card-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* phones: tighter cards so two fit comfortably */
+@media (max-width: 649px) {
+  .card {
+    padding: 12px;
+  }
+
+  .card h3 {
+    font-size: 0.95rem;
+    padding-right: 0;
+  }
+
+  .card p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .card .btn-small {
+    padding: 7px 10px;
+    font-size: 0.72rem;
+  }
+
+  .card::after {
+    width: 26px;
+    height: 26px;
+    top: 8px;
+    right: 8px;
+    font-size: 0.8rem;
+  }
+}
+/* ---------- Arrow button that opens the video pop-up ---------- */
+
+/* the old decorative arrow is hidden on video cards, a real button replaces it */
+.card:has(> video)::after {
+  display: none;
+}
+
+.card-expand {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card-expand:hover,
+.card-expand:focus-visible {
+  background-color: var(--berry);
+  color: white;
+}
+
+@media (max-width: 649px) {
+  .card-expand {
+    top: 8px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ---------- The pop-up itself ---------- */
+.video-modal {
+  width: min(92vw, 460px);
+  padding: 0;
+  overflow: auto;
+  background-color: var(--panel);
+  color: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.video-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(4px);
+}
+
+.modal-video {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  background-color: #000;
+  object-fit: contain;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(25, 29, 31, 0.75);
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background-color: var(--berry);
+}
+
+.modal-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 14px;
+  padding: 14px 16px 16px;
+}
+
+.modal-title {
+  flex: 1 1 180px;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.modal-caption .btn {
+  margin: 0;
+}
+
+/* stops the page scrolling behind the pop-up */
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+/* ---------- Saving messages and Order Code ---------- */
+.order-status {
+  max-width: var(--flow-width);
+  margin: 12px auto 0;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.order-status.ok {
+  border-color: rgba(120, 200, 140, 0.6);
+}
+
+.order-status.error {
+  color: var(--rose-soft);
+  border-color: var(--berry);
+}
+
+.order-code-note {
+  max-width: var(--flow-width);
+  margin: 0 auto 14px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.order-code-note strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--rose-soft);
+}
+
+.btn-next:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ---------- Logo in the hero (centred, also on phones) ---------- */
+.hero-logo {
+  display: block;
+  position: static;
+  float: none;
+  width: 90px;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+/* if the logo sits in a wrapper together with the shop name, stack them in the middle */
+header :has(> .hero-logo) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .hero-logo {
+    width: 72px;
+  }
+}
+
+/* ---------- Personalised Outfits: wider card grid ---------- */
+#personalised-outfits .card-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+}
+
+/* ---------- Personalised Outfits: the upload section ---------- */
+.personalised-box {
+  max-width: var(--flow-width);
+  margin: 0 auto;
+  padding: 24px 20px;
+  text-align: center;
+  background-color: var(--panel);
+  border: 1.5px dashed var(--rose);
+  border-radius: 18px;
+}
+
+.personalised-box h3 {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.personalised-box h3 i {
+  margin-right: 8px;
+  color: var(--rose-soft);
+}
+
+.personalised-box p {
+  margin-bottom: 16px;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+#own-images {
+  display: none;
+}
+
+.personalised-box .preview-area {
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.personalised-box .preview-area img {
+  width: 88px;
+  height: 88px;
+}
+
+/* ---------- "Continue to order" link and pop-up ---------- */
+.continue-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 20px;
+  background-color: var(--berry);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+.continue-link:hover {
+  background-color: var(--berry-hover);
+}
+
+.notice-modal {
+  width: min(92vw, 400px);
+  padding: 28px 24px 24px;
+  text-align: center;
+  background-color: var(--panel);
+  color: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.notice-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(4px);
+}
+
+.notice-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: white;
+  background-color: var(--berry);
+  border-radius: 50%;
+}
+
+.notice-modal h3 {
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+.notice-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.notice-code {
+  margin: 2px 0 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--rose-soft);
+}
+
+.notice-text {
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+.notice-modal .btn-next,
+.notice-modal .btn-ghost {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+}
+/* ---------- Hero logo + shop name: centred on every screen ---------- */
+.logo-container {
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  text-align: center;
+}
+
+.logo-container .site-logo {
+  display: block;
+  flex: none;
+  width: 90px;
+  height: auto;
+}
+
+.logo-container h1 {
+  text-align: center;
+}
+
+/* phones and small tablets: logo on top, shop name underneath, both in the middle */
+@media (max-width: 760px) {
+  .logo-container {
+    flex-direction: column;
+    gap: 10px !important;
+    margin-bottom: 10px;
+    transform: none !important;
+  }
+
+  .logo-container .site-logo {
+    width: 76px;
+  }
+
+  .logo-container h1 {
+    font-size: clamp(2.4rem, 11vw, 3.6rem) !important;
+    line-height: 1.1;
+  }
+}
+
+/* ---------- Footer: edge to edge ---------- */
+
+#order {
+  padding-bottom: 16px;
+}
+
+/* Grayscale gradient inspired by the reference */
+body {
+  background: linear-gradient(
+    100deg,
+    #3d3f40 0%,
+    #292b2d 42%,
+    #111314 100%
+  );
+}
+
+section {
+  background: transparent;
+}
+
+/* Keep the hero video, with the same charcoal-to-black tint */
+header {
+  background: transparent !important;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    rgba(34, 36, 37, 0.55) 0%,
+    rgba(20, 22, 23, 0.68) 52%,
+    rgba(8, 9, 10, 0.78) 100%
+  );
+}
+
+header > *:not(video) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Slightly lighter than the page, like the fabric reference */
+.card {
+  background: linear-gradient(
+    135deg,
+    #303335 0%,
+    #212427 58%,
+    #272a2c 100%
+  );
+  border-color: #383c3f;
+}

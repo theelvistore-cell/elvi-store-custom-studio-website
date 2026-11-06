@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="elvistorelogo.jpg"alt="The Elvi Store logo">
+  <title>The Elvi Store - Custom Fashion Studio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Our own styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ 
+  <!-- ================= MENU ================= -->
+  <nav style="position: relative; padding-left: 60px;">
+  <img src="elvistorelogo.jpg" alt="The Elvi Store logo" class="nav-logo" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; object-fit: cover;">
+    <a href="#categories">Collections</a>
+    <a href="#complete-customization">Personalised Outfits</a>
+    <a href="#order">Order</a>
+    <a href="#customer-queries">Customer Queries</a>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header style="position: relative; overflow: hidden; isolation: isolate; background: transparent;">
+    <video src="videos/background.mp4" autoplay muted loop playsinline aria-hidden="true"
+      style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.45; z-index: -1;"></video>
+        <div class="logo-container" style="display: flex; align-items: center; gap: 12px; transform: translateY(-35px);">
+          <img src="elvistorelogo.jpg" alt="The word elvi in flowing dark brown cursive lettering on a white background, forming an elegant fashion brand logo." class="site-logo">
+          <h1 style="margin: 0; font: 700 4.5rem 'Playfair Display', serif; letter-spacing: normal; text-transform: none;">The Elvi Store</h1>
+    </div>
+    <p class="eyebrow">Custom Fashion Studio</p>
+    <p><i>Your style</i> <em>your way.</em></p>
+    <p class="tagline">Design your dream outfit, made just for you.</p>
+  </header>
+
+  <!-- ================= COLLECTIONS =================
+       TO ADD A CARD: copy one <div class="card"> ... </div>
+       and paste it inside the right <div class="card-grid">.
+       TO ADD A CATEGORY: copy one whole <div class="category"> ... </div>.
+  -->
+  <section id="categories">
+    <h2>Our Collections</h2>
+
+    <!-- Casual Wears -->
+    <div class="category" id="casual-wears">
+      <h3 class="category-title">Casual Wears</h3>
+      <div class="card-grid">
+
+        <div class="card">
+          <video src="videos/frocks.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Daily Frocks</h3>
+          <p>Playful, elegant, and comfortable,Feel the joy of wearing our daily frocks</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/everydayethnic.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Everyday Ethnic</h3>
+          <p>Traditional looks, tailored to fit,Look special in our everyday ethnic wear</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/shortkurtis.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Short Kurtis</h3>
+          <p>Everyday comfort with a modern twist,Fit yourself perfectly in our short kurtis</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/longtops.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Long Tops</h3>
+          <p>Modest, Comfortable, and Classy,Make a graceful entrance with our long tops.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/3pieceset.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>3-Piece Sets</h3>
+          <p>Feel Comfortable and Magneficant,Complete your look with our 3-piece sets.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/westerntops.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Western Tops</h3>
+          <p>Handmade, unique, and stylish,make you feel confident with our westen tops</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+        
+        <div class="card">
+          <video src="videos/peplumtops&palazzopants.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Peplum Top &amp; Circular Palazzo Set</h3>
+          <p>Elegant silhouettes, endless compliments!Step out in style with our peplum top and circular palazzo set</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ethnic Wears -->
+    <div class="category" id="ethnic-wears">
+      <h3 class="category-title">Ethnic &amp; Festive Wears</h3>
+
+
+      <div class="card-grid">
+
+
+        <div class="card">
+          <video src="videos/thegrandsilhouttegown.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>The Grand Silhouette Gown</h3>
+          <p>Handcrafted elegance for a timeless look,Feel your confidence with our grand silhouette gowns</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+           <video src="videos/anarkali.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Anarkali</h3>
+          <p>Traditional elegance, reimagined for modern wear,Feel the comfort and grace of our anarkali dresses</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/halfsarees.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Half Sarees</h3>
+          <p>Graceful and stylish, perfect for festive occasions,Stay ethnic and feel confident in our half sarees</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+       
+
+        <div class="card">
+          <video src="videos/sareegown.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Saree Gown</h3>
+          <p>Elegant and comfortable, perfect for any occasion,Feel the comfort and grace of our saree gowns</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+        
+        <div class="card">
+          <video src="videos/chicfestivefrock.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>The Chic Festive Dress</h3>
+          <p>Chic &amp; Love Wrapped in Love, Just Like a Hug!Feel the hug of wearing our chic festive dresses</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div> 
+
+        <div class="card">
+          <video src="videos/ethniccroptopandskirtset.mp4" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Traditional Top &amp; Skirt Set</h3>
+          <p>Matching sets made your way,Stunning and Gorgeous! Step out and slay with our Indo western sets!</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+       <div class="card">
+          <video src="videos/ombrelehenga.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Ombre Lehenga</h3>
+          <p> Beauty is an understatement!This ombre lehenga is everything!step into the spotlight with our stunning ombre lehenga</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div> 
+
+
+     <div class="card">
+          <video src="videos/ஆழினி.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>ஆழினி From ELVI STORE(Kalamkri inspired Raw silk Half Sarees)</h3>
+          <p>Handcrafted fashion, timeless grace!Steal the show with our  ஆழினி </p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+
+        <div class="card">
+          <video src="videos/பொற்கொடி.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>பொற்கொடி from THE ELVI STORE(The Velvet Lehenga Set)</h3>
+          <p>Handcrafted elegance for a timeless look!Appear sleek and gorgous with our பொற்கொடி</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div> 
+        
+        <div class="card">
+          <video src="videos/பிரியாழ்.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>பிரியாழ் from THE ELVI STORE</h3>
+          <p>A thoughtfully designed piece that brings together timeless elegance and contemporary style.Try it on and feel the difference with our பிரியாழ்</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/பூந்துகில்.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>பூந்துகில் from  THE ELVI STORE(Kalamkri Skirt &amp; Crop top with a Fancy shawl)</h3>
+          <p>A thoughtfully designed piece that brings together timeless elegance and contemporary style.Walk in elegance &amp; style with our பூந்துகில் </p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+    </div>
+    </div>
+    <!-- Special Occasion Wears -->
+    <div class="category" id="special-occasion-wears">
+      <h3 class="category-title">Special Occasion Wears</h3>
+      <div class="card-grid">
+
+        <div class="card">
+          <video src="videos/babygirlbaptismset.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3> <i class="fa-solid fa-gem card-icon"></i>Baby GirlBaptism Sets</h3>
+          <p> Pure white comfort for her special blessings.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+         <div class="card">
+          <video src="videos/babyboybaptismset.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Baby Boy Baptism Sets</h3>
+          <p>Soft, premium fabrics designed for his holy day</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+
+
+        <div class="card">
+           <video src="videos/communion.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3> <i class="fa-solid fa-gem card-icon"></i>Communion Gowns</h3>
+          <p>Elegant and comfortable, perfect for religious ceremonies.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/weddinggown.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3> <i class="fa-solid fa-gem card-icon"></i>Wedding Gowns</h3>
+          <p>Timeless elegance for your special day.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Kids Wear -->
+    <div class="category" id="kids-wear">
+      <h3 class="category-title">Kids Wear</h3>
+      <div class="card-grid">
+
+        <div class="card">
+          <video src="videos/shimmermaxigown.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3> <i class="fa-solid fa-gem card-icon"></i>Shimmer Maxi Gown</h3>
+          <p>Cute, comfy, and made to twirl in.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/lightweightpartyfrocks.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3> <i class="fa-solid fa-gem card-icon"></i>Light Weight Party Frock</h3>
+          <p>Cute, comfy, and made to twirl in.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/bonedbodicesundress.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3> <i class="fa-solid fa-gem card-icon"></i>Kids Boned-Bodice Sundress</h3>
+          <p>Trendy summer looks for little ones.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/summercordset.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3> <i class="fa-solid fa-gem card-icon"></i>Kids Summer Cord Set</h3>
+          <p>comfy and modern style for little ones.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/crochetandcrapdress.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Lace Crochet Fit & Flare Dress</h3>
+          <p>Soft, handmade pieces for your little one.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/pattupavadai.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Kids Ethnic Wears</h3>
+          <p>Festive traditional wear, made comfortable.</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+         <div class="card">
+          <video src="videos/birthdaygownset.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>First Birthday Gown set</h3>
+          <p>Make your little one's first birthday special with our elegant gown set</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+         
+
+         <div class="card">
+          <video src="videos/festivegownset.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Kids Festive Gown set</h3>
+          <p>Festive modern designs for your little one</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+         <div class="card">
+          <video src="videos/florafluffyfrock.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Flora Fluffy Frock</h3>
+          <p>Light weight, Handmade flowers and a classy finish! </p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+         <div class="card">
+          <video src="videos/partyfluffyfrock.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Party Fluffy Frock</h3>
+          <p>Fluffy and fun for any party!</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+        <div class="card">
+          <video src="videos/ballgown.mp4#t=0.1" muted loop playsinline preload="metadata"
+          onmouseover="this.play()"
+          onmouseout="this.pause(); this.currentTime = 0.1;"></video>
+          <h3><i class="fa-solid fa-gem card-icon"></i>Kids Ball Gowns</h3>
+          <p>Classy and elegant,feel like a princess!</p>
+          <a href="#customize" class="btn btn-small">How do you like your style?</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Personalised Outfits -->
+    <div class="category" id="personalised-outfits">
+      <h3 class="category-title">Personalised Outfits</h3>
+      <div class="card-grid">
+
+        <div class="card">
+          <i class="fa-solid fa-wand-magic-sparkles card-icon"></i>
+          <h3>Custom Dresses</h3>
+          <p>Your idea, stitched into reality.</p>
+          <a href="#complete-customization" class="btn btn-small">Show us your idea</a>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= CUSTOMIZE ================= -->
+  <section id="customize">
+    <h2>Customize Your Outfit</h2>
+    <p class="section-intro">Every piece is made to order. Here are some of the details you can personalize.</p>
+
+    <!-- Step label + progress bar -->
+    <div class="wizard-bar">
+      <p id="step-label">Step 1 of 4</p>
+      <div class="progress">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- The four steps. Only one shows at a time. -->
+    <div class="option-grid">
+
+      <!-- Step 1: Neckline -->
+      <div class="option-group">
+        <h3><i class="fa-solid fa-shirt"></i> Neckline</h3>
+        <div class="pills">
+          <span class="pill">Round</span>
+          <span class="pill">V-Neck</span>
+          <span class="pill">Boat</span>
+          <span class="pill">Square</span>
+          <span class="pill">Collared</span>
+          <span class="pill">Halter</span>
+          <span class="pill">Sweetheart</span>
+          <span class="pill pill-other"><i class="fa-solid fa-plus"></i> Other</span>
+        </div>
+        <!-- Hidden until "Other" is picked -->
+        <div class="upload-box" hidden>
+          <p>Show us what you have in mind. Upload reference images.</p>
+          <label for="ref-neckline" class="upload-label"><i class="fa-solid fa-camera"></i> Choose images</label>
+          <input type="file" id="ref-neckline" class="ref-input" accept="image/*" multiple>
+          <div class="preview-area"></div>
+        </div>
+      </div>
+
+      <!-- Step 2: Sleeve Type -->
+      <div class="option-group">
+        <h3><i class="fa-solid fa-hand"></i> Sleeve Type</h3>
+        <div class="pills">
+          <span class="pill">Sleeveless</span>
+          <span class="pill">Short</span>
+          <span class="pill">Three-Quarter</span>
+          <span class="pill">Full</span>
+          <span class="pill">Puffed</span>
+          <span class="pill">Bell</span>
+          <span class="pill pill-other"><i class="fa-solid fa-plus"></i> Other</span>
+        </div>
+        <div class="upload-box" hidden>
+          <p>Show us what you have in mind. Upload reference images.</p>
+          <label for="ref-sleeve" class="upload-label"><i class="fa-solid fa-camera"></i> Choose images</label>
+          <input type="file" id="ref-sleeve" class="ref-input" accept="image/*" multiple>
+          <div class="preview-area"></div>
+        </div>
+      </div>
+
+      <!-- Step 3: Fabric -->
+      <div class="option-group">
+        <h3><i class="fa-solid fa-swatchbook"></i> Fabric</h3>
+        <div class="pills">
+          <span class="pill">Cotton</span>
+          <span class="pill">Silk</span>
+          <span class="pill">Georgette</span>
+          <span class="pill">Linen</span>
+          <span class="pill">Chiffon</span>
+          <span class="pill">Velvet</span>
+          <span class="pill pill-other"><i class="fa-solid fa-plus"></i> Other</span>
+        </div>
+        <div class="upload-box" hidden>
+          <p>Show us what you have in mind. Upload reference images.</p>
+          <label for="ref-fabric" class="upload-label"><i class="fa-solid fa-camera"></i> Choose images</label>
+          <input type="file" id="ref-fabric" class="ref-input" accept="image/*" multiple>
+          <div class="preview-area"></div>
+        </div>
+      </div>
+
+      <!-- Step 4: Length -->
+      <div class="option-group">
+        <h3><i class="fa-solid fa-ruler-vertical"></i> Length</h3>
+        <div class="pills">
+          <span class="pill">Knee</span>
+          <span class="pill">Midi</span>
+          <span class="pill">Ankle</span>
+          <span class="pill">Floor</span>
+          <span class="pill pill-other"><i class="fa-solid fa-plus"></i> Other</span>
+        </div>
+        <div class="upload-box" hidden>
+          <p>Show us what you have in mind. Upload reference images.</p>
+          <label for="ref-length" class="upload-label"><i class="fa-solid fa-camera"></i> Choose images</label>
+          <input type="file" id="ref-length" class="ref-input" accept="image/*" multiple>
+          <div class="preview-area"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+    <!-- end of option-grid -->
+
+    <!-- Back / Next (only one set, so the IDs stay unique) -->
+    <div class="wizard-buttons">
+      <button type="button" id="back-btn" class="btn-ghost">Back</button>
+      <button type="button" id="next-btn" class="btn-next">Next</button>
+    </div>
+
+      <!-- ================= PERSONALISED OUTFITS ================= -->
+  <section id="complete-customization">
+    <h2>Personalised Outfits</h2>
+    <p class="section-intro">Have a unique design in mind? Upload your own sketches, Pinterest pictures, or screenshots.</p>
+
+    <div class="personalised-box">
+      <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Got inspiration? Completely your own design? Show us!</h3>
+      <p>Add as many pictures as you like (up to 12). We will make it just for you.</p>
+      <label for="own-images" class="upload-label">
+  <i class="fa-solid fa-camera"></i> Choose images</label>
+<input type="file" id="own-images" accept="image/jpeg,image/png" multiple>
+<div id="own-preview" class="preview-area"></div>
+</div>
+
+    <div class="wizard-buttons">
+      <button type="button" id="own-back-btn" class="btn-ghost">Back</button>
+      <button type="button" id="own-next-btn" class="btn-next">Next</button>
+    </div>
+  </section>
+    <div class="summary-box">
+  <h3>Your Selection</h3>
+  <p id="summary-text">Nothing selected yet. Pick your options above.</p>
+</div>
+
+  
+
+  <!-- ================= ORDER ================= -->
+  <section id="order">
+    <h2>Complete Your Order</h2>
+    <p class="section-intro">Confirm your details and we'll get back to you on WhatsApp.</p>
+
+    <div class="form-wrapper">
+    <iframe
+  src="https://docs.google.com/forms/d/e/1FAIpQLSccnZOLbr5xWc5lF3SMRG9BD09OUIJPtGh00g5ebsSgHGd7iQ/viewform?embedded=true"
+  title="Elvi Store customer details and measurements"
+  width="100%"
+  height="1181"
+  style="border: 0;"
+  marginheight="0"
+  marginwidth="0">
+  Loading…
+</iframe>
+    </div>
+  </section>
+
+
+
+  <section id="customer-queries">
+  <h2>Need help with your order?</h2>
+  <p class="section-intro">
+    Something not quite right? We’re here to make it right.
+    Tell us about an issue with your outfit and our team will help.
+  </p>
+  <div style="text-align: center;">
+    <a
+      class="btn"
+      href="https://docs.google.com/forms/d/e/1FAIpQLScgHY-9KQXcRLLYcoTQ-ZAkezj_As2XS8vvbuAUqH_0wCiHFw/viewform?usp=header"
+      target="_blank"
+      rel="noopener">
+      Get help with an order
+    </a>
+  </div>
+</section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>&copy; 2026 The Elvi Store - Custom Fashion Studio</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
