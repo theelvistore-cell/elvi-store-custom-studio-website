@@ -1153,6 +1153,10 @@ header > *:not(video) {
   text-align: center;
 }
 
+.whatsapp-button-container {
+  text-align: center;
+}
+
 .whatsapp-button:hover {
   background: #1da851;
 }
