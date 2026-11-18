@@ -663,10 +663,18 @@ if (ownInput && ownNextBtn) {
 })();
 
 // =====================================================
-// PART 9: Phones can't hover, so play a video while it is on screen
+// PART 9: Card videos play by themselves while they are on screen
 // =====================================================
 (function () {
-  if (!window.matchMedia('(hover: none)').matches) return;
+  const videos = document.querySelectorAll('.card video');
+
+  // the old "play only on hover" code is not needed any more
+  videos.forEach(function (video) {
+    video.removeAttribute('onmouseover');
+    video.removeAttribute('onmouseout');
+    video.muted = true;
+    video.setAttribute('playsinline', '');
+  });
 
   const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -676,9 +684,10 @@ if (ownInput && ownNextBtn) {
         entry.target.pause();
       }
     });
-  }, { threshold: 0.6 });
+  }, { threshold: 0.5 });
 
-  document.querySelectorAll('.card video').forEach(function (video) {
+  videos.forEach(function (video) {
     observer.observe(video);
   });
 })();
+
