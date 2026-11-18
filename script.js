@@ -226,21 +226,70 @@ function showStatus(line, text, kind) {
 }
 
 // the Order Code note, above the order form
-const codeNote = document.createElement('p');
+// copies text to the clipboard and shows "Copied!" on the button for 2 seconds
+function copyText(text, button) {
+  if (!button.dataset.original) {
+    button.dataset.original = button.innerHTML;
+  }
+
+  const showCopied = function () {
+    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+    setTimeout(function () {
+      button.innerHTML = button.dataset.original;
+    }, 2000);
+  };
+
+  // older way, works even when the modern clipboard is not allowed
+  const fallbackCopy = function () {
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+    let worked = false;
+    try {
+      worked = document.execCommand('copy');
+    } catch (error) {
+      worked = false;
+    }
+    document.body.removeChild(area);
+    if (worked) {
+      showCopied();
+    }
+  };
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(showCopied).catch(fallbackCopy);
+  } else {
+    fallbackCopy();
+  }
+}
+
+// the big Order Code box, above the order form
+const codeNote = document.createElement('div');
 codeNote.className = 'order-code-note';
 codeNote.hidden = true;
+codeNote.innerHTML =
+  '<p class="order-code-label">Your order code</p>' +
+  '<p class="order-code-value"></p>' +
+  '<button type="button" class="copy-code-btn"><i class="fa-regular fa-copy"></i> Copy code</button>' +
+  '<p class="order-code-hint">Please paste this code in the "Order Code" box of the form below.</p>';
+
 const formWrapper = document.querySelector('.form-wrapper');
 if (formWrapper) {
   formWrapper.insertAdjacentElement('beforebegin', codeNote);
 }
 
+codeNote.querySelector('.copy-code-btn').addEventListener('click', function () {
+  copyText(codeNote.querySelector('.order-code-value').textContent, this);
+});
+
 function showOrderCode(code) {
-  codeNote.textContent = 'Your order code: ';
-  const strong = document.createElement('strong');
-  strong.textContent = code;
-  codeNote.appendChild(strong);
+  codeNote.querySelector('.order-code-value').textContent = code;
   codeNote.hidden = false;
 }
+
 
 // the pop-up that tells her to continue to the order form
 const notice = document.createElement('dialog');
