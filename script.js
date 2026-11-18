@@ -248,7 +248,7 @@ notice.className = 'notice-modal';
 notice.innerHTML =
   '<div class="notice-icon">&#10003;</div>' +
   '<h3>Your design is saved!</h3>' +
-  '<p class="notice-label">Your order code</p>' +
+  '<p class="notice-label">Your order code. Copy your Code</p>' +
   '<p class="notice-code"></p>' +
   '<p class="notice-text">One last step: fill in your contact details below so we can start on your outfit.</p>' +
   '<button type="button" class="btn-next notice-continue">Continue to order</button>' +
