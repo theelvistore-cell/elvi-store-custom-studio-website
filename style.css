@@ -1301,3 +1301,47 @@ header > *:not(video) {
   transform: translateY(-2px);
   filter: brightness(1.1);
 }
+
+/* ---------- WhatsApp and Instagram buttons: identical size ---------- */
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.contact-row > a {
+  flex: 0 1 280px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  margin: 0;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  box-shadow: none;
+}
+
+.contact-row > a i {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.contact-row > a[href*="wa.me"],
+.contact-row > a[href*="whatsapp"] {
+  background: #0f8a45;
+}
+
+.contact-row > a[href*="instagram.com"] {
+  background: linear-gradient(45deg, #dc2743, #bc1888);
+}
